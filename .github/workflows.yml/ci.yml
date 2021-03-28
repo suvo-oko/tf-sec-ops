@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - 'feature/*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Checkov Github Action
+        uses: bridgecrewio/checkov-action@v12
+      
